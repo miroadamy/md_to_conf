@@ -38,7 +38,7 @@ PARSER.add_argument('-u', '--username', help='Confluence username if $CONFLUENCE
 PARSER.add_argument('-p', '--apikey', help='Confluence API key if $CONFLUENCE_API_KEY not set.')
 PARSER.add_argument('-o', '--orgname',
                     help='Confluence organisation if $CONFLUENCE_ORGNAME not set. '
-                         'e.g. https://XXX.atlassian.net/wiki'
+                         'e.g. https://XXX.jira.com/wiki'
                          'If orgname contains a dot, considered as the fully qualified domain name.'
                          'e.g. https://XXX')
 PARSER.add_argument('-a', '--ancestor',
@@ -111,7 +111,7 @@ try:
         if ORGNAME.find('.') != -1:
             CONFLUENCE_API_URL = 'https://%s' % ORGNAME
         else:
-            CONFLUENCE_API_URL = 'https://%s.atlassian.net/wiki' % ORGNAME
+            CONFLUENCE_API_URL = 'https://%s.jira.com/wiki' % ORGNAME
     else:
         LOGGER.error('Error: Org Name not specified by environment variable or option.')
         sys.exit(1)
